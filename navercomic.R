@@ -17,6 +17,7 @@ for (i in 1:20) {
   comicGrade <- append(comicGrade, grade)
 }
 
+
 navercomic <- data.frame(comicName, comicSummary, comicGrade)
 str(navercomic)
 View(navercomic)
