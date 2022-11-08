@@ -1,5 +1,5 @@
 library(RSelenium)
-remDr <- remoteDriver(remoteServerAddr="localhost" , 
+remDr <- remoteDriver(remoteServerAddr="localhost", 
                       port=4445, browserName="chrome")
 remDr$open()
 
@@ -52,10 +52,13 @@ repeat {
   movieRecommend2 <- append(movieRecommend2, recommends2)
   movieText <- append(movieText, texts)
   
+  
   # 페이지 이동
   crr_pageElement <- remDr$findElement(using="css selector", "nav.pagination strong")
   crr_pageNum <- as.numeric(crr_pageElement$getElementText())
+  cat(crr_pageNum, "페이지 완료\n")
   if (crr_pageNum==10) {
+    cat("수집 종료\n")
     break
   }
   nextPage <- remDr$findElement(using="css selector", paste0("nav.pagination a:nth-child(", crr_pageNum+1, ")"))
