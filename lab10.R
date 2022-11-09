@@ -33,7 +33,7 @@ appendToMemoNew(gsub("[[:punct:]]\\<", "", memo[1]))
 appendToMemoNew(toupper(memo[2]))
 appendToMemoNew(gsub("[[:digit:]]", "", memo[3]))
 appendToMemoNew(gsub("  ", " ", gsub("[A-z]", "", memo[4]))) 
-# [A-Za-z]로 해야함, [A-z]이면 대문자와 소문자 사이에 다른 특수 문자가 있음음
+# [A-Za-z]로 해야함, [A-z]이면 대문자와 소문자 사이에 다른 특수 문자가 있음
 appendToMemoNew(gsub("[0-9<>!]", "", memo[5]))
 appendToMemoNew(gsub("[[:space:]]", "", memo[6]))
 
