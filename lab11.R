@@ -82,3 +82,17 @@ dev.off()
 # legend 잘리는 것
 dev.copy(png, "output/clicklog4_2.png", height=500, width=700) 
 dev.off()
+
+
+## legend.text=T 활용
+barplot(t(성적[,3:5]),
+        main="학생별 점수",
+        names.arg=성적$성명,
+        legend.text=T,
+        family="dog",
+        col=brewer.pal(3,"Pastel1"),
+        col.main="magenta",
+        cex.main=2)
+
+dev.copy(png, "output/clicklog4_3.png", height=500, width=700)
+dev.off()
