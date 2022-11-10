@@ -78,3 +78,7 @@ legend(x="topright",
 
 dev.copy(png, "output/clicklog4.png") 
 dev.off()
+
+# legend 잘리는 것
+dev.copy(png, "output/clicklog4_2.png", height=500, width=700) 
+dev.off()
