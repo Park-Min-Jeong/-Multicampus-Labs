@@ -55,6 +55,15 @@ mpg %>%
 cat("배기량이 4 이하인 자동차의 고속도로 연비 평균:", m_hwy[1])
 cat("배기량이 5 이상인 자동차의 고속도로 연비 평균:", m_hwy[2])
 
+## answer
+mpg %>%
+  filter(displ <= 4) %>%
+  summarise(n = mean(hwy))
+mpg %>%
+  filter(displ >= 5) %>%
+  summarise(n = mean(hwy))
+
+
 # 3-2
 mpg %>% 
   filter(manufacturer %in% c("audi", "toyota")) %>% 
@@ -64,12 +73,26 @@ mpg %>%
 cat("audi 자동차의 도시 연비 평균:", m_cty[1])
 cat("toyota 자동차의 도시 연비 평균:", m_cty[2])
 
+## answer
+mpg %>%
+  filter(manufacturer == "audi") %>%
+  summarise(n = mean(cty))
+mpg %>%
+  filter(manufacturer == "toyota") %>%
+  summarise(n = mean(cty))
+
+
 # 3-3
 mpg %>% 
   filter(manufacturer %in% c("chevrolet", "ford", "honda")) %>% 
   summarise(m2_hwy = mean(hwy)) %>% 
   pull(m2_hwy) -> m2_hwy
 cat("chevrolet, ford, honda 자동차의 고속도로 연비 평균:", m2_hwy)
+
+## answer
+mpg %>% 
+  filter(manufacturer %in% c("chevrolet", "ford", "honda")) %>% 
+  summarise(n = mean(hwy))
 
 
 ##### 문제4 #####
@@ -86,6 +109,13 @@ mpg2 %>%
   filter(class %in% c("suv", "compact")) %>%
   filter(m_cty == max(m_cty)) %>%
   pull(class)
+## answer
+mpg2 %>%
+  filter(class == "suv") %>%
+  summarise(mean_suv = mean(cty))
+mpg2 %>%
+  filter(class == "compact") %>%
+  summarise(mean_compact = mean(cty))
 
 
 ##### 문제5 #####
@@ -110,6 +140,17 @@ score$수학 <- ifelse(score$수학 %in% outliers,
                      round(mean(score$수학, na.rm=T)), 
                      score$수학)
 View(score)
+## answer
+outliers <- function(qnum) {
+  Q1 <- qnum[2]
+  Q3 <- qnum[4]
+  lower <- Q1 - 1.5 * (Q3 - Q1) # 아래 울타리
+  upper <- Q3 + 1.5 * (Q3 - Q1) # 위 울타리
+  return(c(lower, upper))
+}
+lu <- outliers(boxplot.stats(score$수학)$stats)
+meanmath <- round(mean(score$수학, na.rm=T))
+ifelse(score$수학 > lu[2], meanmath, score$수학)
 
 # 그림 4: 결측치 처리
 score %>%
