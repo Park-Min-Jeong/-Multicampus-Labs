@@ -18,15 +18,24 @@ mpg %>% tail(10)
 
 # 1-5
 mpg %>% View()
+## spreadsheet-style data viewer
 
 # 1-6
 mpg %>% summary()
 
 # 1-7
 mpg %>% count(manufacturer)
+## answer
+mpg %>%
+  group_by(manufacturer) %>%
+  tally()
 
 # 1-8
 mpg %>% count(manufacturer, model)
+## answer
+mpg %>%
+  group_by(manufacturer, model) %>%
+  tally()
 
 
 ##### 문제2 #####
