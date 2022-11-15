@@ -8,6 +8,9 @@ font_add(family = "cat", regular = "fonts/HoonWhitecatR.ttf")
 font_add(family = "dog", regular = "fonts/THEdog.ttf")
 font_add(family = "maple", regular = "fonts/MaplestoryBold.ttf")
 
+## answer: 폰트 사이즈 조정
+# showtext_opts(dpi=75)
+
 
 # 문제 1
 student <- read.csv("data/score.csv")
@@ -17,6 +20,9 @@ ggplot(student, aes(x=math, y=science, col=class)) +
   geom_point() #+ theme(text=element_text(size=30)) # 이미지에서 폰트 사이즈가 너무 작아서 조정
 
 ggsave("output/result1.png")
+
+## answer
+ggplot(student, aes(x=math, y=science, col=class)) + geom_point(aes(color=class)) 
 
 
 # 문제 2
