@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HTML&CSS 기술 수행평가</title>
+    <style>
+        @font-face {
+            font-family: 'PyeongChangPeace-Bold';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2206-02@1.0/PyeongChangPeace-Bold.woff2') format('woff2');
+            font-weight: 700;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Yeongdo-Rg';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2202-2@1.0/Yeongdo-Rg.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+        header {
+            background-image : linear-gradient(to bottom, lavenderblush, white, lightcyan);
+            text-align : center;
+            padding : 20px;
+        }
+        h1 {
+            text-shadow : 1px 1px 3px yellow;
+            color : orange;
+            font-family : PyeongChangPeace-Bold;
+        }
+        a {
+            text-decoration : none;
+            margin : 30px;
+            font-family : Yeongdo-Rg;
+        }
+        a:hover {
+            font-weight : bold;
+        }
+        article {
+            width : 80%;
+            margin : 30px;
+            padding : 20px;
+            margin-left : auto;
+            margin-right : auto;
+            border-radius : 20px;
+            border : 5px dashed gray;
+        }
+        .intro {
+            color : mediumblue;
+        }
+        .book {
+            color : mediumseagreen;
+        }
+        .place {
+            color : mediumpurple;
+        }
+        table, th, td {
+            border : 1px solid forestgreen;
+            border-collapse : collapse;
+        }
+        th {
+            background-color : forestgreen;
+            color : white;
+        }
+        figure, aside, footer {
+            text-align : center;
+        }
+        footer {
+            background-color : gray;
+            color : white;
+            margin : 30px;
+            padding : 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>HTML5 학습</h1>
+        <nav>
+            <a href="https://www.w3.org/">W3C</a>
+            <a href="https://www.w3schools.com/">W3SCHOOLS</a>
+            <a href="https://jquery.com/">jQuery</a>
+        </nav>
+    </header>
+
+    <section>
+        <article>
+            <h2 class="intro">나의 소개</h2>
+            <ul>
+                <li>이름 : 박민정</li>
+                <li>별명 : 에디</li>
+                <li>관심기술 : python</li>
+                <li>취미 : 젤네일, 보석십자수</li>
+            </ul>
+        </article>
+        <article>
+            <h2 class="book">올해 재미있게 읽은 책</h2>
+            <table>
+                <tr><th>제목</th><th>저자</th><th>출판사</th><th>장르</th></tr>
+                <tr><td>운명의 과학</td><td>한나 크리츨로우</td><td>브론스테인</td><td>뇌과학</td></tr>
+                <tr><td>엔드 오브 타임</td><td>브라이언 그린</td><td>와이즈베리</td><td>자연과학</td></tr>
+                <tr><td>지리의 힘</td><td>팀 마샬</td><td>사이</td><td>세계사</td></tr>
+                <tr><td>수면의 과학</td><td>사쿠라이 다케시</td><td>을유문화사</td><td>자연과학</td></tr>
+                <tr><td>가짜뉴스의 심리학</td><td>박준석</td><td>휴머니스트</td><td>심리학</td></tr>
+            </table>
+        </article>
+        <article>
+            <h2 class="place">자랑하고 싶은 <span style="color:red">우리 동네</span>의 아름다운 곳</h2>
+            <p><span style="font-weight:bold">마로니에 공원</span>은
+                문예회관 및 대학로 길거리에 작품들이 전시되어 있어 꿈과 낭만이 어린 문화예술의 거리로
+                독특한 분위기를 자아내고 있다.
+            </p>
+            <figure>
+                <img src="../images/마로니에공원.jpg" width="560">
+                <figcaption>마로니에 공원 전경</figcaption>
+            </figure>
+        </article>
+    </section>
+
+    <aside>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/6q4DSKFn_k8"
+                title="YouTube video player" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen></iframe>
+    </aside>
+
+    <footer>
+        <em>이 문서는 박민정에 의해 HTML5 와 CSS3 기술을 사용하여 2022년 9월 23일에 작성하였습니다(Ver 1.1).</em>
+    </footer>
+</body>
+</html>
