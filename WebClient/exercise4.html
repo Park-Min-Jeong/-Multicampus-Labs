@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>exercise4</title>
+    <style>
+        body {
+            text-align : center;
+        }
+    </style>
+</head>
+<body>
+    <h1>이벤트 처리 실습</h1>
+    <hr>
+    <button>맑음</button>
+    <button>흐림</button>
+    <button>비</button>
+    <hr>
+    <div id="output"></div>
+    <img src="">
+    <script>
+        var pictures = ["../images/sun.png", "../images/cloud.png", "../images/rain.png"];
+
+        var btn = document.getElementsByTagName("button");
+        var dom = document.getElementsByTagName("img")[0];
+
+        for (let i=0; i<3; i++) {
+            btn[i].addEventListener("click", function () {
+                dom.src = pictures[i];
+                dom.width = 400;
+                dom.height = 400;
+                });
+        }
+    </script>
+</body>
+</html>
